@@ -1,0 +1,18 @@
+<div>
+  <h2>Registro de Usuarios</h2>
+  <label for="nombre">Nombre:</label>
+  <input type="text" [(ngModel)]="nombre" id="nombre">
+  <br>
+  <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+  <input type="date" [(ngModel)]="fechaNacimiento" id="fechaNacimiento">
+  <br>
+  <label for="telefono">Teléfono:</label>
+  <input type="text" [(ngModel)]="telefono" id="telefono">
+  <br>
+  <button (click)="registrarUsuario()">Registrar</button>
+
+  <h2>Lista de Usuarios</h2>
+  <ul>
+    <li *ngFor="let usuario of usuarios">Nombre:--- {{ usuario.nombre }} --- Fecha de Nacimiento:---  {{ usuario.fechaNacimiento }}--- Telefono:--- {{ usuario.telefono }}</li>
+  </ul>
+</div>
