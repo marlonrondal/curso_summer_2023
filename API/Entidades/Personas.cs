@@ -16,6 +16,6 @@ namespace Entidades
         public DateTime fechaNacimiento { get; set; }
 
         [MaxLength(25)]
-        public string telefono { get; set; }
+        public string? telefono { get; set; }
     }
 }

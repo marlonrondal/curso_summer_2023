@@ -47,15 +47,22 @@ namespace Repositorios
             return _context.personas.FirstOrDefault(p => p.id == id);
         }
 
+        public async Task<IEnumerable<Personas>> obtenerTodasPersonas()
+        {
+            return await _context.personas.ToListAsync();
+        }
+
         // Primeras 10 personas con más de 21 años ordenado por nombre
         public async Task<IEnumerable<Personas>> obtenerPrimeras10()
         {
-            var personasMayoresDe21 = await _context.personas.ToListAsync();
+            var personasMayoresDe21 = (await obtenerTodasPersonas()).ToList();
 
             var ultimosMayoresDe21 = personasMayoresDe21
                 .Where(p => calcularEdad(p.fechaNacimiento) > 21)
-                .OrderBy(p => p.nombre)
+                //.OrderBy(p => p.nombre)
+                .ToList()  // Convertir a lista para usar TakeLast
                 .TakeLast(10)
+                .OrderBy(p=>p.nombre)
                 .ToList();
 
             return ultimosMayoresDe21;

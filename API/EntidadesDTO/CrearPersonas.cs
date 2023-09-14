@@ -12,6 +12,6 @@ namespace EntidadesDTO
 
         public DateTime fechaNacimiento { get; set; }
 
-        public string telefono { get; set; }
+        public string? telefono { get; set; }
     }
 }
