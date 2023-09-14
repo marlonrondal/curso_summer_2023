@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "464faedd-8d45-41d7-bd92-a14828a90cdc",
+		"name": "API_Personas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29182305"
+	},
+	"item": [
+		{
+			"name": "Personas_mayores_de_21_años_ordenadas_por_nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/api/personas/ultimos10",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"api",
+						"personas",
+						"ultimos10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener_una_persona",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/api/personas/c2d147ba-7050-40c9-97e1-08dbb4f53c48",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"api",
+						"personas",
+						"c2d147ba-7050-40c9-97e1-08dbb4f53c48"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener_una_persona_GUID_mal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/api/personas/c2d147b",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"api",
+						"personas",
+						"c2d147b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener_una_persona_no_existe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/api/personas/c2d147ba-7050-40c9-87e6-09dbb7f36c47",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"api",
+						"personas",
+						"c2d147ba-7050-40c9-87e6-09dbb7f36c47"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear_persona_mayor_de_21_años_con_numero",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Jose Antonio\",\r\n  \"fechaNacimiento\": \"1990-09-14T07:35:54.242Z\",\r\n  \"telefono\": \"654656654\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/api/personas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"api",
+						"personas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear_persona_menor_de_21_años_con_numero",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Uxue\",\r\n  \"fechaNacimiento\": \"2009-09-14T07:35:54.242Z\",\r\n  \"telefono\": \"654656654\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/api/personas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"api",
+						"personas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear_persona_mayor_de_21_años_sin_numero",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"pepe\",\r\n  \"fechaNacimiento\": \"1990-09-14T07:35:54.242Z\",\r\n  \"telefono\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/api/personas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"api",
+						"personas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear_persona_menor_de_21_años_sin_numero",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"June\",\r\n  \"fechaNacimiento\": \"2009-09-14T07:35:54.242Z\",\r\n  \"telefono\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:{{portNumber}}/api/personas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"api",
+						"personas"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "portNumber",
+			"value": "7178",
+			"type": "string"
+		}
+	]
+}
