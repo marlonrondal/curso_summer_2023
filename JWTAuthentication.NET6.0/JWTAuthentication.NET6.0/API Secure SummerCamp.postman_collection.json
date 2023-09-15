@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "a2566814-9349-48bf-a693-2f5cb67c0f62",
+		"name": "API Secure SummerCamp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2084219"
+	},
+	"item": [
+		{
+			"name": "weatherforecast",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoicGVwZSIsImp0aSI6ImQ2MDRhMTQ2LWI5MWQtNDI4OC04NTA1LTkzY2IyOWNhM2NhZCIsImV4cCI6MTYyNTE0NDU2NiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo0MjAwIn0.jlsjfW-VB_CP0AkWnCeku8KbDcIH2H3FjhUaSvJdVBc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{portNumber}}/weatherforecast",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"weatherforecast"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alta Usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"pepe2\",\r\n      \"password\": \"P@ssword123\",\r\n        \"email\": \"pepe@mail.com\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:{{portNumber}}/api/authenticate/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"api",
+						"authenticate",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"pepe\",\r\n    \"password\": \"P@ssword123\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:{{portNumber}}/api/authenticate/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"api",
+						"authenticate",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alta Usuario Administrador",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Administrador2\",\r\n      \"password\": \"P@ssword123\",\r\n        \"email\": \"administrador2@mail.com\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:{{portNumber}}/api/authenticate/register-admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{portNumber}}",
+					"path": [
+						"api",
+						"authenticate",
+						"register-admin"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "portNumber",
+			"value": "7049",
+			"type": "string"
+		}
+	]
+}
